@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class 四則演算 extends Controller
+class CalculatorController extends Controller
 {
 
     public function index()
     {
-        return view('四則演算');
+        return view('Calculator');
     }
 
     public function calc(Request $request)
@@ -32,12 +32,14 @@ class 四則演算 extends Controller
                 $result = "Can't divide 0";
             }
         }
-        return view('四則演算',
+        return view(
+            'Calculator',
             [
                 'number1' => $number1,
                 'number2' => $number2,
                 'operator' => $operator,
                 'result' => $result,
-            ]);
+            ]
+        );
     }
 }

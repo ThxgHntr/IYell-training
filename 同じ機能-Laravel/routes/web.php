@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\四則演算;
+use App\Http\Controllers\CalculatorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +22,8 @@ Route::get('/succeed', function () {
     return view('employee/succeed');
 })->name('succeed');
 
-Route::get('/calculator', [四則演算::class, 'index']);
-Route::post('/calculator', [四則演算::class, 'calc'])->name('calc');
+Route::get('/calculator', [CalculatorController::class, 'index']);
+Route::post('/calculator', [CalculatorController::class, 'calc'])->name('calc');
 
 // Route::controller(EmployeeController::class)->group(function () {
 //     Route::prefix('employee')->group(function () {
