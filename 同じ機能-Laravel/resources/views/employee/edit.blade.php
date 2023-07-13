@@ -48,8 +48,6 @@
                 </div>
                 <input type="submit" name="submit" value="編集" class="btn btn-primary" />
             </form>
-            <div class="mx-5 px-5 mb-3">
-                <a class="link" href="{{ route('employee.index') }}">戻る</a>
-            </div>
+            <x-return-link />
         </div>
 </x-layout>
