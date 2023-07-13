@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\四則演算;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
+Route::resource('employee', EmployeeController::class);
 
 Route::get('/', [EmployeeController::class, 'index']);
-Route::delete('/employee/delete/{id}', [EmployeeController::class, 'delete'])->name('employee.delete');
+Route::get('/employee/delete/{id}', [EmployeeController::class, 'delete'])->name('employee.delete');
 Route::get('/succeed', function () {
     return view('employee/succeed');
 })->name('succeed');
 
-Route::resource('employee', EmployeeController::class);
+Route::get('/calculator', [四則演算::class, 'index']);
+Route::post('/calculator', [四則演算::class, 'calc'])->name('calc');
 
 // Route::controller(EmployeeController::class)->group(function () {
 //     Route::prefix('employee')->group(function () {

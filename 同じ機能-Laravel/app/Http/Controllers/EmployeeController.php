@@ -12,7 +12,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = DB::select('SELECT * FROM 社員');
+        $employees = DB::table('社員')->paginate(3);
 
         return view('employee.index', ['employees' => $employees]);
     }
@@ -36,7 +36,7 @@ class EmployeeController extends Controller
                 $request->empID,
                 $request->name,
                 $request->dept,
-                $request->gender
+                $request->gender,
             ]
         );
         return redirect()->route('succeed');
@@ -59,7 +59,7 @@ class EmployeeController extends Controller
     {
         $employee = DB::select('SELECT * FROM 社員 where id = ?', [$id]);
 
-        return view('employee.edit', ['employee' => $employee[0]]);
+        return view('employee.edit', ['employee' => $employee[0], 'id' => $id]);
     }
 
     /**
@@ -70,10 +70,10 @@ class EmployeeController extends Controller
         DB::update(
             'UPDATE 社員 SET 社員番号=?, 氏名=?, 部署=?, 性別=? WHERE id = ?',
             [
-                $request->社員番号,
-                $request->氏名,
-                $request->部署,
-                $request->性別,
+                $request->empID,
+                $request->name,
+                $request->dept,
+                $request->gender,
                 $id,
             ]
         );
@@ -84,7 +84,7 @@ class EmployeeController extends Controller
     {
         $employee = DB::select('SELECT * FROM 社員 where id = ?', [$id]);
 
-        return view('employee.delete', ['employee' => $employee[0]]);
+        return view('employee.delete', ['employee' => $employee[0], 'id' => $id]);
     }
 
     /**
@@ -92,7 +92,7 @@ class EmployeeController extends Controller
      */
     public function destroy(string $id)
     {
-        DB::delete('DELETE 社員 WHERE id = ?', [$id]);
+        DB::delete('DELETE FROM 社員 WHERE id = ?', [$id]);
         return redirect()->route('succeed');
     }
 }

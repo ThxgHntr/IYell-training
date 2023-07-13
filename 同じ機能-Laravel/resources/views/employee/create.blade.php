@@ -54,7 +54,7 @@
                     </label>
                 </div>
                 <div class="col-sm-2 form-check">
-                    <input class="form-check-input" type="radio" name="性別" value="1">
+                    <input class="form-check-input" type="radio" name="gender" value="1">
                     <label class="form-check-label">
                         男
                     </label>
