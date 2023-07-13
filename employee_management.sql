@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2023 at 10:00 AM
+-- Generation Time: Jul 13, 2023 at 05:49 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,10 @@ CREATE TABLE `社員` (
 
 INSERT INTO `社員` (`id`, `社員番号`, `氏名`, `部署`, `性別`) VALUES
 (1, 'a', 'a', 'c', 0),
-(3, 'b', 'b', 'b', 1);
+(3, 'b', 'b', 'b', 1),
+(4, 'd', 'd', 'd', 0),
+(5, 'e', 'e', 'd', 0),
+(6, 'fasa', 'efqfe', 'b', 0);
 
 --
 -- Indexes for dumped tables
@@ -61,7 +64,7 @@ ALTER TABLE `社員`
 -- AUTO_INCREMENT for table `社員`
 --
 ALTER TABLE `社員`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
