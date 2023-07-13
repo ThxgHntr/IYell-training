@@ -1,0 +1,29 @@
+html,
+body {
+    height: 99%;
+}
+
+.center {
+    flex-direction: column;
+}
+
+.center,
+.nums,
+.picker,
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.operator-picker {
+    margin: 0px 10px;
+}
+
+.operator {
+    margin: 10px;
+}
+
+.button {
+    margin: 20px;
+}

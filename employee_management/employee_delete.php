@@ -1,0 +1,72 @@
+<?php
+// Database connection
+require_once 'dbConnect.php';
+
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+}
+$query = "SELECT * FROM 社員 WHERE ID = $id";
+$employee = $conn->query($query)->fetch();
+if (isset($_POST['submit'])) {
+    $conn->prepare("DELETE FROM 社員 WHERE id=?")->execute([$id]);
+    header("Location: finished_page.php");
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <title>削除</title>
+</head>
+
+<style>
+    html,
+    body {
+        height: 99%;
+    }
+</style>
+
+<body class="p-5">
+    <h1>IYELL 社員管理システム</h1>
+
+    <div class="d-flex flex-column justify-content-center mx-5 px-5" style="height: 70%;">
+        <form method="POST" action="" class="mx-5 px-5 mb-3">
+            <div class="row mb-2">
+                <label for="社員番号" class="col-sm-2 col-form-label fw-bold">社員番号</label>
+                <div class="col-sm-8">
+                    <?php echo $employee["社員番号"] ?>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="氏名" class="col-sm-2 col-form-label fw-bold">氏名</label>
+                <div class="col-sm-8">
+                    <?php echo $employee["氏名"] ?>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="部署" class="col-sm-2 col-form-label fw-bold">部署</label>
+                <div class="col-sm-8">
+                    <?php echo $employee["部署"] ?>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="性別" class="col-sm-2 col-form-label fw-bold">性別</label>
+                <div class="col-sm-8">
+                    <?php echo $employee["性別"] ? "男" : "女"; ?>
+                </div>
+            </div>
+            <input type="submit" name="submit" value="削除" class="btn btn-danger" />
+        </form>
+        <div class="mx-5 px-5 mb-3">
+            <a class="link" href="employee_list.php">戻る</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
