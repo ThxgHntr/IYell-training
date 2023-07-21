@@ -46,6 +46,6 @@
                 </div>
                 <input type="submit" name="submit" value="登録" class="btn btn-primary" />
             </form>
-            <x-return-link />
+            <x-return_link />
         </div>
 </x-layout>
