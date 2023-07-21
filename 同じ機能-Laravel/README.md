@@ -1,10 +1,10 @@
 # Containerize Laravel with docker-compose and Dockerfile
 
 ## Make sure you have:
-    - Installed laravel libraries using 'composer install'.
-    - Created '.env' file by copying '.env.example' and changed it's name into '.env'
-    - Generated key for '.env' by using 'php artisan key:generate'
-    - Docker installed.
+ - Installed laravel libraries using 'composer install'.
+ - Created '.env' file by copying '.env.example' and changed it's name into '.env'
+ - Generated key for '.env' by using 'php artisan key:generate'
+ - Docker installed.
 
 ```bash
 # Build Docker images and run the container
