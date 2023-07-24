@@ -32,6 +32,6 @@
                 </div>
                 <input type="submit" name="submit" value="削除" class="btn btn-danger" />
             </form>
-            <x-return_link/>
+            <x-return-link />
         </div>
 </x-layout>

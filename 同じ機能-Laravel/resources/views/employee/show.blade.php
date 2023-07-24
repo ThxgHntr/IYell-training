@@ -29,6 +29,6 @@
                     </div>
                 </div>
             </div>
-            <x-return_link/>
+            <x-return-link />
         </div>
 </x-layout>

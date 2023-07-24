@@ -48,6 +48,6 @@
                 </div>
                 <input type="submit" name="submit" value="編集" class="btn btn-primary" />
             </form>
-            <x-return_link />
+            <x-return-link />
         </div>
 </x-layout>
