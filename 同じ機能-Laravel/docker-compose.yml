@@ -1,6 +1,7 @@
 services:
   # Laravel application service
   app:
+    image: employee_management
     build:
       context: .
       dockerfile: Dockerfile
@@ -22,3 +23,6 @@ services:
       - MYSQL_DATABASE=${DB_DATABASE}
       - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+
+volumes:
+  employee_management_db:
