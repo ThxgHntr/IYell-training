@@ -9,7 +9,7 @@ class CalculatorController extends Controller
 
     public function index()
     {
-        return view('Calculator');
+        return view('calculator');
     }
 
     public function calc(Request $request)
@@ -33,7 +33,7 @@ class CalculatorController extends Controller
             }
         }
         return view(
-            'Calculator',
+            'calculator',
             [
                 'number1' => $number1,
                 'number2' => $number2,
