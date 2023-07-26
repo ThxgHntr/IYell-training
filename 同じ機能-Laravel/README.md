@@ -7,8 +7,8 @@
  - Docker installed.
 
 ```bash
-# Build Docker images and run the container
-$ docker-compose up --build
+# Build Docker images and run the container in background
+$ docker-compose up -d
 ```
 
 ## Create new terminal
