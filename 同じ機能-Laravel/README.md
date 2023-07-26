@@ -17,3 +17,7 @@ $ docker-compose up -d
 # Migrate the database ('employee_management' is the name of the container we want to run this code on)
 $ docker exec employee_management php artisan migrate
 ```
+
+## Check if the application works
+
+Go to http://localhost:8080/
