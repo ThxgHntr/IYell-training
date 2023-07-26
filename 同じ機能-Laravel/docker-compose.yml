@@ -12,6 +12,8 @@ services:
             - .:/var/www/html
         depends_on:
             - db
+        networks:
+            - emp_mn
 
   # MySQL service
     db:
@@ -25,6 +27,12 @@ services:
             - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
         volumes:
             - 'employee_management:/var/lib/mysql'
+        networks:
+            - emp_mn
 
 volumes:
     employee_management:
+
+networks:
+    emp_mn:
+        driver: bridge
