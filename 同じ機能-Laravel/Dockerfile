@@ -2,8 +2,7 @@
 FROM php:8.2-apache
 
 # Install system dependencies and PHP extensions required by Laravel
-RUN apt-get update && apt-get install -y \
-    && docker-php-ext-install pdo pdo_mysql
+RUN apt-get update && apt-get install -y && docker-php-ext-install pdo pdo_mysql
 
 # Set the working directory to /var/www/html (default for Apache)
 WORKDIR /var/www/html
