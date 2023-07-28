@@ -25,13 +25,13 @@ services:
             - MYSQL_DATABASE=${DB_DATABASE}
             - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
             - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
-        volumes:
-            - 'employee_management:/var/lib/mysql'
+        # volumes:
+        #     - 'employee_management:/var/lib/mysql'
         networks:
             - emp_mn
 
-volumes:
-    employee_management:
+# volumes:
+#     employee_management:
 
 networks:
     emp_mn:
