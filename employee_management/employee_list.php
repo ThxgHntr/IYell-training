@@ -63,9 +63,9 @@ $employees = $conn->query($query)->fetchAll();
                                 echo "女";
                             } else echo "男"; ?></td>
                         <td>
-                            <a href="/employee_update.php?id=<?php echo $employee['id'] ?>" class="link-warning">編集</a>
+                            <a href="employee_update.php?id=<?php echo $employee['id'] ?>" class="link-warning">編集</a>
                             <a>/</a>
-                            <a href="/employee_delete.php?id=<?php echo $employee['id'] ?>" class="link-danger">削除</a>
+                            <a href="employee_delete.php?id=<?php echo $employee['id'] ?>" class="link-danger">削除</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
