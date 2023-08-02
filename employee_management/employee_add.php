@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
         ':dept' => $_POST['部署'],
         ':gender' => $_POST['性別'],
     ]);
-    header("Location: employee_list.php");
+    header("Location: finished_page.php");
 }
 ?>
 
