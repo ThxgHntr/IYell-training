@@ -54,7 +54,7 @@ $employees = $conn->query($query)->fetchAll();
             <tbody class="table-group-divider">
                 <?php foreach ($employees as $key => $employee) : ?>
                     <tr>
-                        <th scope="row"><a href="/employee_detail.php?id=<?php echo $employee['id'] ?>" class="link">
+                        <th scope="row"><a href="employee_detail.php?id=<?php echo $employee['id'] ?>" class="link">
                                 <?php echo $employee['id']; ?></a></th>
                         <td><?php echo $employee['社員番号']; ?></td>
                         <td><?php echo $employee['氏名']; ?></td>
